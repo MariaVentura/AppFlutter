@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/first_page.dart';
+import 'package:my_app/pages/second_page.dart';
+import 'package:my_app/pages/third_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   int _index = 0;
 
   @override
@@ -41,20 +45,21 @@ class _MyHomePageState extends State<MyHomePage> {
     final size = MediaQuery.of(context).size;
 
     Widget child;
+
     switch (_index) {
       case 0:
-        child:
+        child=
         FlutterLogo();
         break;
       case 1:
-        child:
+        child=
         MaterialApp(
-            debugShowCheckedModeBanner: false); //Quitar barra roja del celular
+            debugShowCheckedModeBanner: false, home: SecondPage()); //Quitar barra roja del celular
         break;
       case 2:
-        child:
+        child=
         MaterialApp(
-            debugShowCheckedModeBanner: false); //Quitar barra roja del celular
+            debugShowCheckedModeBanner: false, home: ThirdPage()); //Quitar barra roja del celular
         break;
       default:
     }
@@ -63,29 +68,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: SizedBox.expand(child: child),
       bottomNavigationBar: BottomNavigationBar(
-          onTap: (newIndex) => setState(() => _index= newIndex), 
+          onTap: (newIndex) => setState(() => _index = newIndex),
           currentIndex: _index,
           items: [
-            BottomNavigationBarItem(icon: Icon(
-              Icons.home,
-              color: Colors.blueAccent,
-              size:30.0
-            ),
-            label:("Home")),
-            BottomNavigationBarItem(icon: Icon(
-                Icons.home,
-                color: Colors.orangeAccent,
-                size:30.0
-            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home, color: Colors.blueAccent, size: 30.0),
+                label: ("Home")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home, color: Colors.orangeAccent, size: 30.0),
                 label: ("Register")),
-            BottomNavigationBarItem(icon: Icon(
-                Icons.home,
-                color: Colors.greenAccent,
-                size:30.0
-            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home, color: Colors.greenAccent, size: 30.0),
                 label: ("Shopping Cart ")),
-          ]
-      ),
+          ]),
     );
-  } //agregando wadas
+  }
 }
