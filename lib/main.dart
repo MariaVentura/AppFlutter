@@ -75,10 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.home, color: Colors.blueAccent, size: 30.0),
                 label: ("Home")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: Colors.orangeAccent, size: 30.0),
+                icon: Icon(Icons.wysiwyg, color: Colors.orangeAccent, size: 30.0),
                 label: ("Register")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: Colors.greenAccent, size: 30.0),
+                icon: Icon(Icons.shopping_cart, color: Colors.greenAccent, size: 30.0),
                 label: ("Shopping Cart ")),
           ]),
     );
